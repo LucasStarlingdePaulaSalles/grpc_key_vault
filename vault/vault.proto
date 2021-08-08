@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package vault;
+
+service Vault{
+    rpc insert (RequestDT) returns (ResponseDT) {}
+    rpc consult (RequestDT) returns (ResponseDT) {}
+    rpc terminate(RequestDT) returns (ResponseDT) {}
+}
+
+message RequestDT{
+    optional int32 key = 1;
+    optional string desc = 2; 
+    optional int32 val = 3;
+}
+
+
+message ResponseDT{
+    int32 retval = 1;
+    optional string retdesc = 2;
+}
