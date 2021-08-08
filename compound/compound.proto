@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package compound;
+
+service Compound{
+    rpc insert (RequestDT) returns (ResponseDT) {}
+    rpc consult (RequestDT) returns (ResponseDT) {}
+    rpc terminate(RequestDT) returns (ResponseDT) {}
+}
+
+message RequestDT{
+    optional int32 key = 1;
+}
+
+
+message ResponseDT{
+    string name = 1;
+    int32 cred = 2;
+    string course = 3;
+    int32 cred = 4;
+}
