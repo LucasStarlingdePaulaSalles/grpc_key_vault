@@ -36,7 +36,7 @@ def serve():
     global storage
     storage = {}
 
-    #server initialization as a global variable, to perfor shutdown on method
+    #server initialization as a global variable, to perfor shutdown on grpc procedure
     global server 
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     vault_pb2_grpc.add_VaultServicer_to_server(Vault(), server)
