@@ -3,7 +3,6 @@ syntax = "proto3";
 package compound;
 
 service Compound{
-    rpc insert (RequestDT) returns (ResponseDT) {}
     rpc consult (RequestDT) returns (ResponseDT) {}
     rpc terminate(RequestDT) returns (ResponseDT) {}
 }
@@ -14,8 +13,8 @@ message RequestDT{
 
 
 message ResponseDT{
-    string name = 1;
-    int32 cred = 2;
-    string course = 3;
-    int32 cred = 4;
+    int32 val1 = 1;
+    optional string str1 = 2;
+    optional int32 val2 = 3;
+    optional string str2 = 4;
 }
